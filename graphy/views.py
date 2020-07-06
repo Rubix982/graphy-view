@@ -15,4 +15,4 @@ def index(request):
 
     script, div = components(plot)
 
-    return render(request, "graphy/base.html", {'script': script, 'div': div} )
+    return render(request, "graphy/index.html", {'script': script, 'div': div} )
