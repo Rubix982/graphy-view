@@ -3,6 +3,7 @@ from .development import *
 
 # turn off all debugging
 DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # You will have to determine, which hostnames should be served by Django
 ALLOWED_HOSTS = []

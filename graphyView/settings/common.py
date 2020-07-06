@@ -18,11 +18,21 @@ PROJECT_ROOT = dirname(DJANGO_ROOT)
 # the name of the whole site
 SITE_NAME = basename(DJANGO_ROOT)
 
-# collect static files here
-STATIC_ROOT = join(PROJECT_ROOT, 'run', 'static')
+# collect static files here, checking
+# STATIC_ROOT = join(PROJECT_ROOT, 'run', 'static')
 
-# collect media files here
-MEDIA_ROOT = join(PROJECT_ROOT, 'run', 'media')
+# Checking for heroku deployment
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = join(BASE_DIR, 'staticfiles')
+
+# collect media files here, checking
+# MEDIA_ROOT = join(PROJECT_ROOT, 'run', 'media')
+
+# Checking for heroku deployment
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+MEDIA_ROOT = join(BASE_DIR, 'media/')
 
 # look for static assets here
 STATICFILES_DIRS = [
@@ -35,6 +45,11 @@ PROJECT_TEMPLATES = [
     join(PROJECT_ROOT, 'templates'),
 ]
 
+# print("STATICFILES_DIRS", STATICFILES_DIRS)
+# print("STATIC_ROOT", STATIC_ROOT)
+# print("PROJECT_ROOT", PROJECT_ROOT)
+# print("BASE_DIR", BASE_DIR)
+
 # add apps/ to the Python path
 sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 
@@ -43,7 +58,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 
 # these are the apps
 DEFAULT_APPS = [
-    'graphy',
+    'apps.graphy',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,6 +98,12 @@ TEMPLATES = [
         },
     },
 ]
+
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
 
 # Internationalization
 USE_I18N = False
@@ -137,3 +158,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -10,6 +10,7 @@ from .common import *
 
 # ##### DEBUG CONFIGURATION ###############################
 DEBUG = True
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # allow all hosts during development
 ALLOWED_HOSTS = ['*']
