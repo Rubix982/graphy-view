@@ -6,6 +6,9 @@ import sys
 
 # ##### PATH CONFIGURATION ################################
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = dirname(dirname(abspath(__file__)))
+
 # fetch Django's project directory
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
@@ -51,13 +54,13 @@ DEFAULT_APPS = [
 
 # Middlewares
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 # template stuff
@@ -71,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
+                'django.template.context_processors.request',
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
@@ -89,13 +93,6 @@ USE_I18N = False
 # The required SECRET_KEY is fetched at the end of this file
 SECRET_FILE = normpath(join(PROJECT_ROOT, 'run', 'SECRET.key'))
 
-# these persons receive error notification
-ADMINS = (
-    ('your name', 'your_name@example.com'),
-)
-MANAGERS = ADMINS
-
-
 # ##### DJANGO RUNNING CONFIGURATION ######################
 
 # the default WSGI application
@@ -110,18 +107,6 @@ STATIC_URL = '/static/'
 # the URL for media files
 MEDIA_URL = '/media/'
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.0/topics/i18n/
-
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
 
 # ##### DEBUG CONFIGURATION ###############################
 DEBUG = False
@@ -140,5 +125,15 @@ except IOError:
     except IOError:
         raise Exception('Could not open %s for writing!' % SECRET_FILE)
 
-# Configure Django App For Heroku
-django_heroku.settings(locals())
+# Internationalization
+# https://docs.djangoproject.com/en/2.0/topics/i18n/
+
+LANGUAGE_CODE = "en-us"
+
+TIME_ZONE = "UTC"
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True

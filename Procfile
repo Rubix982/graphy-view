@@ -1,1 +1,1 @@
-web: gunicorn graphyView.wsgi
+web: gunicorn graphyView.wsgi --log-file -
