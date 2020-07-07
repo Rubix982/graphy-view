@@ -16,4 +16,4 @@ def index(request):
     script, div = components(plot)
 
     # return render(request, "graphy/index.html", {'script': script, 'div': div} )
-    return render(request, "graphy/index.html", {})
+    return render(request, "graphy/homepage.html", {})

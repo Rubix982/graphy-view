@@ -403,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/hero-bg-gv-3.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -1486,6 +1486,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  background: #f8fbfe;
+}
+
 .contact .info {
   width: 100%;
   background: #fff;

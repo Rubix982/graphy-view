@@ -67,6 +67,14 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
+#  Cachec configurations
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 # Middlewares
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -161,5 +169,7 @@ USE_TZ = True
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# SESSION MANAGEMENT
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
