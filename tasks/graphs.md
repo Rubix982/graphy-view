@@ -67,19 +67,6 @@ Dividing into different kinds of graphs, statistical and probabilistics graphs,
 - Normal and Standard Curves, applications
 - Z-test, t-test, f-test visualizations
 - Regressions Analysis
-- Statistical Graph
-
-## Exponential Graph
-
-- Self explanatory
-
-## Logarithmic Graphs
-
-- Self explanatory
-
-## Trigometric Graphs
-
-- Self explanatory
 
 # Legends
 
